@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "araba-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["tools/serve.js"],
+      "port": 8080
+    },
+    {
+      "name": "araba-preview",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["tools/serve.js", "8090"],
+      "port": 8090
+    }
+  ]
+}
