@@ -127,10 +127,11 @@ write("finish.wav", concat(
     tone(1046, 0.28, "square", 0.34, 0.004, 0.16),
 ))
 
-# --- Motor (sorunsuz döngü: 80/160 Hz, 0.25s = tam çevrim) ---
+# --- Motor (yumuşak alçak hum, sorunsuz döngü: 70/140 Hz, 0.20s = tam çevrim) ---
 write("engine.wav", mix(
-    tone(80, 0.25, "saw", 0.30, 0, 0, env=False),
-    tone(160, 0.25, "saw", 0.12, 0, 0, env=False),
+    tone(70, 0.20, "sine", 0.26, 0, 0, env=False),
+    tone(140, 0.20, "sine", 0.09, 0, 0, env=False),
+    tone(70, 0.20, "saw", 0.05, 0, 0, env=False),  # hafif doku
 ))
 
 

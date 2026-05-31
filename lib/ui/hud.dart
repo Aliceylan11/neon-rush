@@ -70,14 +70,14 @@ class Hud extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(width: 46), // sol üstteki menü butonuna yer
                   ..._leftPanels(),
-                  const Spacer(),
+                  const SizedBox(width: 10),
                   ValueListenableBuilder<int>(
                     valueListenable: game.speedKmh,
                     builder: (_, v, _) =>
                         _Panel(label: 'KM/S', value: '$v', big: true),
                   ),
-                  const SizedBox(width: 44), // menü butonuna yer
                 ],
               ),
               const SizedBox(height: 8),

@@ -61,9 +61,9 @@ class Controls extends StatelessWidget {
                 ],
               ),
             ),
-            // Menüye dön — sağ üst
+            // Menüye dön — sol üst
             Align(
-              alignment: Alignment.topRight,
+              alignment: Alignment.topLeft,
               child: GestureDetector(
                 onTap: game.onExit,
                 child: Container(

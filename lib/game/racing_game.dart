@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'audio.dart';
+import 'minimap.dart';
 import 'mods.dart';
 import 'player_car.dart';
 import 'race_type.dart';
@@ -106,6 +107,7 @@ class RacingGame extends FlameGame with KeyboardEvents {
         : await images.load(playerCarAsset);
     add(RoadComponent(this)..priority = 0);
     add(PlayerCar(this)..priority = 10);
+    add(MiniMap(this)..priority = 20);
     if (raceType.hasRivals) _spawnRivals();
     if (raceType.hasPickups) _spawnPickups();
     raceTime = raceType.timeLimit;
@@ -365,7 +367,8 @@ class RacingGame extends FlameGame with KeyboardEvents {
     _engAcc += dt;
     if (_engAcc >= 0.1) {
       _engAcc = 0;
-      audio.setEngineVolume(0.1 + 0.45 * speedPercent);
+      // Dururken sus, hızla hafifçe yüksel (rahatsız etmesin)
+      audio.setEngineVolume(speedPercent < 0.04 ? 0.0 : 0.05 + 0.30 * speedPercent);
     }
     if (_crashCd > 0) _crashCd -= dt;
 
